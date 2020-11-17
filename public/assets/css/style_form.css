@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+.submit{
+    background: #56c6c6;
+    border-radius: 20px;
+    font-size: inherit;
+    color: #fff !important;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    padding: 8px 20px;
+    transition: background-color 0.25s;
+}
+
+
+.submit:hover, .submit:focus {
+    background: #66d7d7;
+}
+
+label {
+    color: white;
+}
+
+.contact {
+    background:no-repeat center url("../images/general/vue_aerienne.jpg");
+    background-size: cover;
+    height: 705px;
+    padding: 50px;
+    display: flex;
+}
+
+.resume {
+    text-align: center;
+}
+
+.resume p {
+    color: white;
+    font-size: 20px;
+}
+
+.resume p:hover {
+    font-weight: bold;
+    font-size: 28px;
+}
+

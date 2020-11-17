@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Activités en Alsace | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/Projects-Clean.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro">
+                <h1 class="text-center">Activités</h1>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 col-lg-4 item"><img class="img-fluid" src="../assets/images/activities/marche-de-noel.jpg">
+                    <h2 class="name" style="text-align: center;">Marché de Noël</h2>
+                    <p class="description" style="text-align: center;">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item" style="text-align: center;"><img class="img-fluid" src="../assets/images/activities/route-des-vins-alsace.jpg" style="text-align: center;">
+                    <h2 class="name" style="text-align: center;">Route des vins</h2>
+                    <h3 class="name" style="text-align: center;"></h3>
+                    <p class="description" style="text-align: center;">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item" style="text-align: center;"><img class="img-fluid" src="../assets/images/activities/musee-pain-d-epice.jpg" style="text-align: center;">
+                    <h2 class="name" style="text-align: center;">Musée du pain d'épice</h2>
+                    <p class="description" style="text-align: center;">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item" style="text-align: center;"><img class="img-fluid" src="../assets/images/activities/pass-alsace.png" style="text-align: center;">
+                    <h2 class="name" style="text-align: center;">Pass'Alsace</h2>
+                    <p class="description" style="text-align: center;">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.&nbsp;<br>Plus d’informations : <a href="https://www.pass-alsace.com/">https://www.pass-alsace.com/</a><br></p>
+                </div>
+            </div>
+        </div>
+    </div>{% endblock %}

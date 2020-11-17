@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>  {% block title %} Stras'Gîte: Gîte d'exception au centre de Strasbourg, proche Cathédrale {% endblock %}</title>
+        {% block stylesheet %}
+            <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+            <link rel="stylesheet" href="/assets/fonts/ionicons.min.css">
+            <link rel="stylesheet" href="/assets/css/Animated-Menu-Icon.css">
+            <link rel="stylesheet" href="/assets/css/Navigation-with-Search.css">
+            <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+            <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+            <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
+            <link rel="stylesheet" href="/assets/css/styles.css">
+            <link rel="stylesheet" href="/assets/css/Footer---4-Columns---Social-Icons.css">
+
+        {% endblock %}
+
+    </head>
+
+    <body>
+    {% include '/Layout/header.html.twig' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include '/Layout/footer.html.twig' %}
+
+    {% block javascript %}
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets2/js/jquery.min.js"></script>
+        <script src="/assets2/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets2/js/script.min.js"></script>
+    {% endblock %}
+    </body>
+</html>

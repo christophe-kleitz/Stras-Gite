@@ -1,0 +1,75 @@
+.btn-secondary {
+    color: #465765;
+    background-color: white;
+    border-color: white;
+}
+
+.carousel .carousel-item img {
+    width: 1833px;
+}
+.w-100 {
+    height: 900px;
+}
+
+.strasGite{
+    height: 214px;
+    width: 273px;
+}
+
+.showcase-text {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1024px){
+    .w-100 {
+        height: 750px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .w-100 {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .w-100 {
+        height: 450px;
+    }
+
+    .presents{
+        justify-content: center;
+    }
+}
+
+.presents {
+    width: 100%;
+    padding: 50px 0px 50px;
+}
+
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    padding: 15px 10%;
+}
+
+#footer {
+    text-align: center;
+    color: #4b4c4d;
+    font-size: 14px;
+    font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.container footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
