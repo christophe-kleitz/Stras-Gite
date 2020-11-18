@@ -6,24 +6,38 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>  {% block title %} Stras'Gîte: Gîte d'exception au centre de Strasbourg, proche Cathédrale {% endblock %}</title>
+
         {% block stylesheet %}
             <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
             <link rel="stylesheet" href="/assets/fonts/ionicons.min.css">
             <link rel="stylesheet" href="/assets/css/Animated-Menu-Icon.css">
             <link rel="stylesheet" href="/assets/css/Navigation-with-Search.css">
+<<<<<<< HEAD
             <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
             <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
             <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
             <link rel="stylesheet" href="/assets/css/styles.css">
             <link rel="stylesheet" href="/assets/css/Footer---4-Columns---Social-Icons.css">
 
+=======
+            <link rel="stylesheet" href="/assets/css/styles.css">
+            <link rel="stylesheet" href="/assets/css/Footer---4-Columns---Social-Icons.css">
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
         {% endblock %}
 
     </head>
 
     <body>
-    {% include '/Layout/header.html.twig' %}
+
+    {% if session.is_admin == "" %}
+        {% include '/Layout/header.html.twig' %}
+    {% elseif session.is_admin == 1 %}
+        {% include '/Admin/header.html.twig' %}
+    {% elseif session.is_admin == 0 %}
+        {% include '/User/header.html.twig' %}
+    {% endif %}
+
 
     {% block content %}
     {% endblock %}
@@ -33,9 +47,13 @@
     {% block javascript %}
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
         <script src="/assets2/js/jquery.min.js"></script>
         <script src="/assets2/bootstrap/js/bootstrap.min.js"></script>
         <script src="/assets2/js/script.min.js"></script>
+=======
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
     {% endblock %}
     </body>
 </html>

@@ -2,7 +2,11 @@ h1 {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .submit{
+=======
+form .btn {
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
     background: #56c6c6;
     border-radius: 20px;
     font-size: inherit;
@@ -14,21 +18,34 @@ h1 {
     transition: background-color 0.25s;
 }
 
+<<<<<<< HEAD
 
 .submit:hover, .submit:focus {
+=======
+form .btn:hover, form .btn:focus {
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
     background: #66d7d7;
 }
 
 label {
+<<<<<<< HEAD
     color: white;
 }
 
 .contact {
     background:no-repeat center url("../images/general/vue_aerienne.jpg");
+=======
+    font-weight: bold;
+}
+
+.contact {
+    background:no-repeat center url("../images/general/cathedrale.jpg");
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
     background-size: cover;
     height: 705px;
     padding: 50px;
     display: flex;
+<<<<<<< HEAD
 }
 
 .resume {
@@ -45,3 +62,7 @@ label {
     font-size: 28px;
 }
 
+=======
+    justify-content: center;
+}
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa

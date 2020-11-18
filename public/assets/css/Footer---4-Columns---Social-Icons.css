@@ -1,5 +1,6 @@
 #footer {
   text-align: center;
+<<<<<<< HEAD
   padding: 50px 0px;
 }
 
@@ -44,5 +45,21 @@ a:hover {
   text-align: center;
   font-size: 15px;
   margin-top: 20px;
+=======
+  padding: 10px 0px;
+  background-color: whitesmoke;
+}
+
+
+.footerheadings {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+#copyrightheading {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+>>>>>>> 568b42e04301589b4916117c8a6cf80ea84eb0fa
 }
 

@@ -1,5 +1,5 @@
 <header>
-    {# <div> #}
+    <div>
         <nav class="navbar navbar-light navbar-expand-lg fixed-top navigation-clean-search">
             <div class="container-fluid"><a class="navbar-brand" href="\">Stras'Gîte</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
@@ -12,20 +12,29 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="..\Page\chambre">Chambre 1</a>
-                                    <a class="dropdown-item" href="..\Page\chambre">Chambre 2</a>
-                                    <a class="dropdown-item" href="..\Page\chambre">Chambre 3</a>
-                                    <a class="dropdown-item" href="..\Page\chambre">Chambre 4</a>
+                                    <a class="dropdown-item" href="#">Chambre 2</a>
+                                    <a class="dropdown-item" href="#">Chambre 3</a>
+                                    <a class="dropdown-item" href="#">Chambre 4</a>
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="..\Page\activities">Activités</a></li>
                         <li class="nav-item"><a class="nav-link" href="..\Page\map">Nous trouver</a></li>
                         <li class="nav-item"><a class="nav-link" href="..\Page\contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="..\Login\login">Connexion à mon compte</a></li>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mon compte
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Mes réservations</a>
+                                <a class="dropdown-item" href="#">Donner mon avis</a>
+                                <a class="dropdown-item" href="..\Login\logout">Se déconnecter</a>
+                            </div>
+                        </div>
                     </ul>
                     <a class="btn btn-light action-button" role="button" href="#">Réserver</a>
                 </div>
             </div>
         </nav>
-    {# </div> #}
+    </div>
 </header>

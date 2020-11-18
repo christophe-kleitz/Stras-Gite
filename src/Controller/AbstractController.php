@@ -38,6 +38,9 @@ abstract class AbstractController
                 'debug' => APP_DEV,
             ]
         );
+
+        // Access all Sessions variables
+        $this->twig->addGlobal('session', $_SESSION);
         $this->twig->addExtension(new DebugExtension());
     }
 }
