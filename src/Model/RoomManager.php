@@ -11,6 +11,15 @@ class RoomManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+    public function selectOneById(int $id)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM self::table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+
     public function insert(array $room): int
     {
 

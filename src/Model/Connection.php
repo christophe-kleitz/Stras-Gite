@@ -13,15 +13,6 @@ namespace App\Model;
 
 use \PDO;
 
-/**
- *
- * This class only make a PDO object instanciation. Use it as below :
- *
- * <pre>
- *  $db = new Connection();
- *  $conn = $db->getPdoConnection();
- * </pre>
- */
 class Connection
 {
     /**
