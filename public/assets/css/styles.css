@@ -11,9 +11,10 @@
     height: 900px;
 }
 
-.strasGite{
-    height: 208px;
-    width: 276px;
+img {
+    vertical-align: middle;
+    border-style: none;
+    height: 5em;
 }
 
 .showcase-text {
@@ -59,6 +60,12 @@
     font-size: 25px;
     padding: 15px 10%;
 }
+
+#logo {
+    position: absolute;
+    box-shadow: 4px 4px 6px grey;
+}
+
 
 #footer {
     text-align: center;
