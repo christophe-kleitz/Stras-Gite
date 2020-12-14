@@ -22,6 +22,17 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $directory = dir("./assets/images/room/");
+        $roomPictures = [];
+        while ($entry = $directory->read()) {
+            if (
+                $entry <> '.' && $entry <> '..' && $entry <> 'index.php' && $entry <> 'fond.jpg'
+                && $entry <> '.DS_Store'
+            ) {
+                $roomPictures[] = $entry;
+            }
+        }
+        $directory->close();
+        return $this->twig->render('Home/index.html.twig', ['roomPicture' => $roomPictures]);
     }
 }

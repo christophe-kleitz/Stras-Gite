@@ -17,13 +17,13 @@ Confirmation de réservation | {{ parent() }}
         <h1 class="text-center">Confirmation</h1>
         </div>
         <p class="text-center">
-        Merci {{ post.firstname }} {{ post.lastname }}.
+        Merci {{ bookingInfo.firstname }} {{ bookingInfo.lastname }}.
         </p>
         <p class="text-center">
-        Votre réservation a bien été prise en compte pour la chambre {{ post.roomSelect }}.
+        Votre réservation a bien été prise en compte pour la chambre {{ bookingInfo.roomSelect }}.
         </p>
         <p class="text-center">
-        Une confirmation vous a été envoyée à l'adresse mail suivante : {{ post.email }} .
+        Une confirmation vous a été envoyée à l'adresse mail suivante : {{ bookingInfo.email }} .
         </p>
     </form>
 </div>

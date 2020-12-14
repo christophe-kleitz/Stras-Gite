@@ -17,12 +17,18 @@ Mes messages reçus | {{ parent() }}
             </div>
         </div>
     </div>
+    {% for message in messages %}
     <div class="container-fluid">
         <div style="padding: 25px;border-style: solid;">
-            <p>Nom</p>
-            <p>Prénom</p>
-            <p>Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
-            <div class="text-center"><button class="btn btn-primary active btn-sm" type="button" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Répondre</button><button class="btn btn-danger active btn-sm" type="button" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Supprimer</button></div>
+            <p>{{message.lastname}} {{message.firstname}}</p>
+            <p>{{message.email}}</p>
+            <p>{{message.message}}</p>
+            <div class="text-center">
+                <a role="btn" href="mailto:{{message.email}}" class="btn btn-primary active btn-sm" type="button" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Répondre</a>
+                <a role="btn" href="/Contact/delete/{{ message.id }}" class="btn btn-danger active btn-sm" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Supprimer</a>
+            </div>
         </div>
     </div>
+    <br>
+    {% endfor %}
 {% endblock %}

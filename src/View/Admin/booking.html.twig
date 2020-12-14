@@ -18,59 +18,78 @@ Mes réservations | {{ parent() }}
         </div>
 </div>
     <div class="container-fluid">
+        {% for info in bookingInfo %}
         <div style="border-style: solid;">
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover table-sm">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th style="width: 20%;"></th>
                             <th>Informations</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>N° client</th>
-                            <td>Cell 2</td>
+                            <td>{{info.client_id}}</td>
                         </tr>
                         <tr>
                             <th>Nom Prénom</th>
-                            <td>Cell 4</td>
+                            <td>{{info.firstname}} {{info.lastname}}</td>
                         </tr>
                         <tr>
                             <th>Email</th>
-                            <td>Cell 4</td>
+                            <td>{{info.email}}</td>
                         </tr>
                         <tr>
                             <th>Télèphone</th>
-                            <td>Cell 4</td>
+                            <td>+33 {{info.phone_number}}</td>
                         </tr>
                         <tr>
                             <th>Logement</th>
-                            <td>Cell 4</td>
+                            <td>{{info.room}}</td>
                         </tr>
                         <tr>
                             <th>N° de réservation</th>
-                            <td>Cell 4</td>
+                            <td>{{info.id}}</td>
                         </tr>
                         <tr>
                             <th>Date d'entrée</th>
-                            <td>Cell 4</td>
+                            <td>{{info.arrival}}</td>
                         </tr>
                         <tr>
                             <th>Date de sortie</th>
-                            <td>Cell 4</td>
+                            <td>{{info.departure}}</td>
                         </tr>
                         <tr>
                             <th>Nbr de nuits</th>
-                            <td>Cell 4</td>
+                            <td>{{info.nb_nights }}</td>
                         </tr>
                         <tr>
                             <th>Prix</th>
-                            <td>Cell 4</td>
+                            <td>{{ info.paid_price }}</td>
                         </tr>
+                        <tr>
+                            <th>Nombre d'adultes</th>
+                            <td>{{ info.nb_adult }}</td>
+                        </tr>                        
+                        <tr>
+                            <th>Nombre d'enfants</th>
+                            <td>{{ info.nb_child }}</td>
+                        </tr>
+                        <tr>
+                            <th>Room Service</th>
+                            {% if info.paid_price == 0 %}
+                            <td>Non</td>
+                            {% else %}
+                            <td>Oui</td>
+                            {% endif %}
+                        </tr>                                                
                     </tbody>
                 </table>
             </div>
         </div>
+        <br>
+        {% endfor %}
     </div>
 {% endblock %}

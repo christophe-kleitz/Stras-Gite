@@ -65,7 +65,7 @@ Réserver chez Stras'Gîte | {{ parent() }}
             </div>
             <div class="col-sm-4">
             {# Removing room service JS #}
-                <button class="btn btn-primary" id="btnRoomService" onclick="removeRoomService()">Non merci!</button>
+                <a role="btn" class="btn btn-primary" id="btnRoomService" onclick="removeRoomService()">Non merci!</a>
             </div>
             <div class="col-sm-2">
             {# Setting roomService #}
@@ -84,35 +84,14 @@ Réserver chez Stras'Gîte | {{ parent() }}
             </div>
         </div>
         <hr align="center" width="200">
-
-        {# Registration form  #}
         <br>
-        <h3 class="text-center">Je m'enregistre</h3>
-            <small class="text-danger font-weight-bold">{{ error }}</small>
-        <div class="form-group">
-            <label for="lastname">Nom</label>
-            <input type="text" class="form-control" name="lastname" maxlength="100" required/>
-        </div>
-        <div class="form-group">
-            <label for="firstname">Prénom</label>
-            <input class="form-control" type="text" name="firstname" maxlength="100" required/>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" maxlength="100" required/>
-        </div>
-        <div class="form-group">
-            <label for="phoneNumber">Télèphone</label>
-            <input class="form-control" type="text" name="phoneNumber" required/>
-        </div>
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input class="form-control" type="password" name="password" minlength="8" maxlength="20" required/>
-        </div>
-            <div class="form-group">
-            <label for="passwordCheck">Confirmer le mot de passe</label>
-            <input class="form-control" type="password" name="passwordCheck" minlength="8" maxlength="20" required/>
-        </div>
+        {# Registration form or not if logged in #}
+        {% if session.is_admin == "" %}
+            {% include '/Booking/_form.html.twig' %}
+        {% elseif session.is_admin == 0 %}
+            {% include '/User/_form.html.twig' %}
+        {% endif %}
+
         {# // Send previous form Post variable #}
         <input name="roomSelect" value="{{ post.roomSelect }}" type="text" style="visibility:hidden">
         <input name="arrival" value="{{ post.arrival }}" type="text" style="visibility:hidden">
@@ -122,7 +101,6 @@ Réserver chez Stras'Gîte | {{ parent() }}
         </div>
     </form>
 </div>
-
 {% endblock %}
 
 {% block javascript %}

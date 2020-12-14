@@ -1,0 +1,27 @@
+        {# Not logged in form  #}
+        <h3 class="text-center">Je m'enregistre</h3>
+            <small class="text-danger font-weight-bold">{{ error }}</small>
+        <div class="form-group">
+            <label for="lastname">Nom</label>
+            <input type="text" class="form-control" name="lastname" maxlength="100" required/>
+        </div>
+        <div class="form-group">
+            <label for="firstname">Prénom</label>
+            <input class="form-control" type="text" name="firstname" maxlength="100" required/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" maxlength="100" required/>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Télèphone</label>
+            <input class="form-control" type="text" name="phoneNumber" required/>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input class="form-control" type="password" name="password" minlength="8" maxlength="20" required/>
+        </div>
+            <div class="form-group">
+            <label for="passwordCheck">Confirmer le mot de passe</label>
+            <input class="form-control" type="password" name="passwordCheck" minlength="8" maxlength="20" required/>
+        </div>

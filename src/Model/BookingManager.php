@@ -23,7 +23,7 @@ class BookingManager extends AbstractManager
         $clientID = $statement->fetch();
 
         // Retrieving room ID
-        $roomID = "SELECT id FROM room WHERE room_name = (:roomSelect)";
+        $roomID = "SELECT id FROM room WHERE room = (:roomSelect)";
         $statement = $this->pdo->prepare($roomID);
         $statement->bindValue(':roomSelect', $booking['roomSelect'], \PDO::PARAM_STR);
         $statement->execute();
@@ -46,10 +46,29 @@ class BookingManager extends AbstractManager
 
     public function selectPrice(string $room)
     {
-        $query = "SELECT price_per_night FROM room WHERE room_name = (:room)";
+        $query = "SELECT price_per_night FROM room WHERE room = (:room)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':room', $room, \PDO::PARAM_STR);
         $statement->execute();
         return $statement->fetch();
+    }
+
+    public function selectByID(string $id)
+    {
+        $query = "SELECT b.*, r.room, c.firstname, c.lastname, c.email, c.phone_number 
+        FROM " . self::TABLE . " b JOIN room r ON r.id=b.room_id JOIN clients c ON 
+        c.id=client_id WHERE client_id=" . $id . "";
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    public function selectAll(): array
+    {
+        $query = "SELECT b.*, r.room, c.firstname, c.lastname, c.email, c.phone_number 
+        FROM " . self::TABLE . " b JOIN room r ON r.id=b.room_id JOIN clients c ON c.id=client_id";
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetchAll();
     }
 }

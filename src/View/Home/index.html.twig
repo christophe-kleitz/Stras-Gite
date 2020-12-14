@@ -33,34 +33,16 @@
                 </div>
                 <div class="features-icons bg-light text-center" style="padding-top: 0;padding-bottom: 0;">
                     <div class="row presents">
-                        <div class="col-lg-3 col-xl-2 offset-lg-0 offset-xl-2">
-                            <div class="mx-auto testimonial-item mb-5 mb-lg-0">
-                                <a href="..\Page\chambre"><img class="rounded-circle img-fluid mb-3 strasGite" src="/assets/images/general/suite_standard1.jpg" alt="Chambre standard"></a>
-                                <h5>Chambre 1</h5>
-                                <p class="font-weight-light mb-0">Chambre standard sur le thème du Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-xl-2 offset-lg-0 offset-xl-0">
-                            <div class="mx-auto testimonial-item mb-5 mb-lg-0">
-                                <a href="..\Page\chambre"><img class="rounded-circle img-fluid mb-3 strasGite" src="/assets/images/general/suite_standard2.jpg" alt="Chambre standard"></a>
-                                <h5>Chambre 2</h5>
-                                <p class="font-weight-light mb-0">Chambre standard sur le thème du Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-xl-2 offset-lg-0 offset-xl-0">
-                            <div class="mx-auto testimonial-item mb-5 mb-lg-0">
-                                <a href="..\Page\chambre"><img class="rounded-circle img-fluid mb-3 strasGite" src="/assets/images/general/suite_luxe1.jpg" alt="Chambre de luxe"></a>
-                                <h5>Chambre 3</h5>
-                                <p class="font-weight-light mb-0">Chambre de luxe sur le thème du Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-xl-2 offset-lg-0 offset-xl-0" style="padding-right: 0;">
-                            <div class="mx-auto testimonial-item mb-5 mb-lg-0">
-                                <a href="..\Page\chambre"><img class="rounded-circle img-fluid mb-3 strasGite" src="/assets/images/general/suite_luxe2.jpg" alt="Chambre de luxe"></a>
-                                <h5>Chambre 4</h5>
-                                <p class="font-weight-light mb-0">Chambre de luxe sur le thème du Lorem Ipsum</p>
-                            </div>
-                        </div>
+                        {% for room in rooms %}
+                                <div class="col-lg-3 col-xl-2 offset-lg-0 offset-xl-0">
+                                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                                    <a href="\Room\show\{{ room.id }}"><img class="rounded-circle img-fluid mb-3 strasGite" src="/assets/images/room/{{ random(roomPicture) }}" alt="Chambre standard"></a>
+                                    <h5>Chambre {{ room.room }}</h5>
+                                    <p class="font-weight-light mb-0">Chambre standard sur le thème du Lorem Ipsum</p>
+                                    </div>
+                                </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -82,7 +64,7 @@
             </div>
         </div>
         <div class="row no-gutters">
-            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url(&quot;/assets/images/general/spa.jpg&quot;);"></div>
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background:no-repeat center url(&quot;/assets/images/general/spa.jpg&quot;); background-size: cover"></div>
             <div class="col-lg-6 my-auto order-lg-1 showcase-text">
                 <h2>Le luxe avant tout</h2>
                 <p class="lead mb-0">Nos chambres de luxe sont équipées de spa/jacuzzi avec accès illimité. <br>

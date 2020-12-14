@@ -10,6 +10,7 @@
 
 namespace App\Controller;
 
+use App\Model\RoomManager;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -41,5 +42,11 @@ abstract class AbstractController
         // Access all Sessions variables
         $this->twig->addGlobal('session', $_SESSION);
         $this->twig->addExtension(new DebugExtension());
+
+        // Access all rooms number via DB
+        $roomManager = new RoomManager();
+        $rooms = $roomManager->selectAll();
+        // Now add global variable Room
+        $this->twig->addGlobal('rooms', $rooms);
     }
 }

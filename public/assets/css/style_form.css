@@ -1,8 +1,12 @@
+body {
+    margin-top: 102px;
+}
+
 h1 {
     text-align: center;
 }
 
-form .btn {
+.submit {
     background: #56c6c6;
     border-radius: 20px;
     font-size: inherit;
@@ -14,19 +18,66 @@ form .btn {
     transition: background-color 0.25s;
 }
 
-form .btn:hover, form .btn:focus {
+.submit:hover, .submit:focus {
     background: #66d7d7;
 }
 
 label {
-    font-weight: bold;
+    color: white;
 }
 
 .contact {
-    background:no-repeat center url("../images/general/cathedrale.jpg");
+    background:no-repeat center url("../images/general/vue_aerienne.jpg");
     background-size: cover;
     height: 705px;
     padding: 50px;
     display: flex;
     justify-content: center;
+}
+
+.resume {
+    text-align: center;
+    font-size: 26px;
+}
+
+.resume p {
+    color: white;
+    font-weight: bold;
+}
+
+.card-body{
+    text-align: center;
+    align-items: center;
+}
+.card-text {
+    color: white;
+    font-size: 20px;
+}
+
+.erreur {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+}
+
+.erreur:hover {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.edit {
+    text-align: center;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .contact {
+        display: block;
+        padding: 20px;
+        height: auto;
+        background-position-x: 45%;
+    }
+    .form {
+        margin-bottom: 40px;
+    }
 }

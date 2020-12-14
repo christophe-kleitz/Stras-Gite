@@ -1,11 +1,7 @@
-body{
-  background-image: url("../images/general/jardin.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 .login-clean {
   padding: 80px 0;
+  background: no-repeat center url("../images/general/jardin.jpg");
+  background-size: cover;
 }
 
 .login-clean form {

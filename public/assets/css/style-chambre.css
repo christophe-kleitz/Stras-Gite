@@ -816,9 +816,19 @@ ul li
     text-align:left;
 }
 
-ul.sdbb
-{
-    right: 0px;
-    position: absolute;
+h1 {
+    text-align: center;
 }
 
+.services {
+    display: block;
+}
+
+.services h5 {
+    margin: 50px auto;
+}
+
+.services ul {
+    margin-left: 23%;
+    margin-bottom: 2%;
+}

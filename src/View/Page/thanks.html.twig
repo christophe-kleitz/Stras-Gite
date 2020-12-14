@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    Nous contacter - {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/style_form.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="contact container-fluid">
+            <div class="card-body">
+                <h1>Merci de votre message</h1>
+                <p class="card-text">Je vous remercie Mr/Mme {{ post.lastname ~' '~ post.firstname }} de votre intêret pour mon gîte. <br>
+                Vous recevrez une réponse à l'adresse {{ post.email}} dans les plus brefs délais. <br>
+                N'hésitez pas à continuer votre visite sur le site.</p>
+                <a href="../Home/index" class="btn btn-primary submit">Retourner à l'accueil</a>
+            </div>
+    </div>
+
+
+
+{% endblock %}
