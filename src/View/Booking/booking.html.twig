@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Réserver chez Stras'Gîte | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+{% endblock %}
+
+{% block content %}
+<div class="login-clean">
+    <form method="post">
+        <div >
+        <h1 class="text-center">Réservation</h1>
+        </div>
+        <div class="form-group">
+            <small class="text-danger font-weight-bold">{{ error }}</small>
+        </div>
+        <div class="form-group">
+            <label for="arrival"> Arrivée </label>
+            <input class="form-control" type="date" id="arrival" name="arrival"
+                value="{{ post.arrival }}" min="{{ minDate }}" max="{{ maxDate }}">
+        </div>
+        <div class="form-group">
+            <label for="departure"> Départ </label>
+            <input class="form-control" type="date" id="departure" name="departure"
+                value="{{ post.departure }}" min="{{ minDate }}" max="{{ maxDate }}">
+        </div>
+        <div class="form-group">
+            <label for="room">Choix de la chambre</label>
+            <select class="form-control" name="roomSelect" id="room">
+                <option value="{{ post.roomSelect }}">{{ post.roomSelect }}</option>
+                {% for room in rooms %}
+                <option value="{{ room.room }}">{{ room.room }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="guest">Nombre de personnes</label>
+            <select class="form-control" name="guestSelect" id="guest">
+                <option value="{{ post.guestSelect }}">{{ post.guestSelect }}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>        
+        </div>
+        <div class="form-group">
+            <label for="childGuest">Nombre d'enfants</label>
+            <select class="form-control" name="childGuestSelect" id="childGuest">
+                <option value="{{ post.childGuestSelect }}">{{ post.childGuestSelect }} enfant(s)</option>
+                <option value="aucun">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>        
+        </div>
+        <div class="form-group">
+            <button class="btn btn-light active btn-block" type="submit" name="submit">Accéder à mon récapitulatif</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

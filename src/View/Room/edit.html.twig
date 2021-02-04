@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Modifier la chambre {{ room.room }}</h1>
+    {% include 'Room/_form.html.twig' %}
+    <a href="/Room/show/{{ room.id }}">Retour</a>
+{% endblock %}

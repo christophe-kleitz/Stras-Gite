@@ -1,0 +1,133 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Réserver chez Stras'Gîte | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+{% endblock %}
+
+{% block content %}
+<div class="login-clean">
+    <form method="post" action="../Booking/register">
+    {# Summary of last page  #}
+        <h1 class="text-center">Résumé</h1>
+        <br>
+        <p class="text-center">Réservation du {{ displayArrival }} au {{ displayDeparture }}</p>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <p class="item-name">Check-in</p>
+                <p class="item-description">15:00</p>
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="item-name">Check-out</p>
+                <p class="item-description">11:00</p>
+            </div>
+        </div>
+        <hr align="center" width="200">
+        <h3>Chambre {{ post.roomSelect }}</h3>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+            {# showing and sending Number of nights to DB #}
+                <p class="item-name">{{ nightsNumber }} nuits</p>
+                <input type="text" name="nightsNumber" id="nightsNumber" value="{{ nightsNumber }}" style="visibility:hidden">
+            </div>
+            <div class="col-sm-4">
+                <select name="guestSelect" >
+                    <option value="{{ post.guestSelect }}">{{ post.guestSelect }} adultes</option>
+                    <option value="1">1 adulte</option>
+                    <option value="2">2 adultes</option>
+                    <option value="3">3 adultes</option>
+                    <option value="4">4 adultes</option>
+                </select>
+                <select name="childGuestSelect">
+                    <option value="{{ post.childGuestSelect }}">{{ post.childGuestSelect }} enfant(s)</option>
+                    <option value="aucun">0 enfant</option>
+                    <option value="1">1 enfant</option>
+                    <option value="2">2 enfants</option>
+                    <option value="3">3 enfants</option>
+                    <option value="4">4 enfants</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                {# Room price  #}
+                <input id="pricePerNight" value="{{ room.price_per_night }}" style="text-align: right; border: none; width: 90%;" readonly><span>€</span>
+            </div>
+        </div>
+        <br>
+        <h6>Envie d'un extra ?</h6>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="text" id="roomService">Room Service 24/24h</p>
+            </div>
+            <div class="col-sm-4">
+            {# Removing room service JS #}
+                <a role="btn" class="btn btn-primary" id="btnRoomService" onclick="removeRoomService()">Non merci!</a>
+            </div>
+            <div class="col-sm-2">
+            {# Setting roomService #}
+                <input name="roomServiceChoice" id="roomServiceChoice" value="50" style="text-align: right; border: none; width: 50%;" readonly><span>€</span>
+            </div>
+        </div>
+        <hr align="center" width="200">
+        <br>
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="total" >Total</p>
+            </div>
+            <div class="col-sm-4">
+            {# Setting price to pay  #}
+                <input name="paidPrice" id="priceToPay" value="" style="text-align: right; border: none; width: 90%;" readonly><span>€</span>
+            </div>
+        </div>
+        <hr align="center" width="200">
+        <br>
+        {# Registration form or not if logged in #}
+        {% if session.is_admin == "" %}
+            {% include '/Booking/_form.html.twig' %}
+        {% elseif session.is_admin == 0 %}
+            {% include '/User/_form.html.twig' %}
+        {% endif %}
+
+        {# // Send previous form Post variable #}
+        <input name="roomSelect" value="{{ post.roomSelect }}" type="text" style="visibility:hidden">
+        <input name="arrival" value="{{ post.arrival }}" type="text" style="visibility:hidden">
+        <input name="departure" value="{{ post.departure }}" type="text" style="visibility:hidden">
+        <div class="form-group">
+            <button class="btn btn-light active btn-block" type="submit" name="checkout">Confirmer ma réservation</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script>
+function calculatePrice(){
+    total = (document.getElementById("pricePerNight").value*document.getElementById("nightsNumber").value)+parseInt(document.getElementById("roomServiceChoice").value);
+    document.getElementById("priceToPay").value = total;
+}
+// To calculate on page load
+calculatePrice();
+
+// To recalculate onclick
+function removeRoomService() {
+    if (document.getElementById("roomServiceChoice").value == "50"){
+    document.getElementById("roomService").style.textDecoration = "line-through";
+    document.getElementById("roomServiceChoice").value = "0"; 
+    document.getElementById("btnRoomService").innerHTML = "Oh oui!";
+    calculatePrice();
+    }else{
+    document.getElementById("roomService").style.textDecoration = "none";
+    document.getElementById("roomServiceChoice").value = "50"; 
+    document.getElementById("btnRoomService").innerHTML = "Non merci!";
+    calculatePrice();
+    }
+}
+</script>
+{% endblock %}
+
+
+

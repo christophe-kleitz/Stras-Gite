@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Chambres</h1>
+    <ul>
+        {% for room in rooms %}
+            <li><a href="/Room/show/{{ room.id }}">{{ room.room }} . {{ room.description|raw }}</a></li>
+        {% else %}
+            <li>Rien à afficher</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

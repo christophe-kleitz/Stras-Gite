@@ -13,7 +13,9 @@
   padding-top: 40px;
   color: inherit;
 }
-
+body {
+  margin-top: 102px;
+}
 @media (max-width:767px) {
   .map-clean h2 {
     margin-bottom: 25px;

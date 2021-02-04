@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Mes messages reçus | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/activities-clean.css">
+{% endblock %}
+
+{% block content %}
+    <div class="projects-clean">
+        <div class="container text-right">
+            <div class="intro">
+                <h2 class="text-center text-dark">Mes Messages</h2>
+            </div>
+        </div>
+    </div>
+    {% for message in messages %}
+    <div class="container-fluid">
+        <div style="padding: 25px;border-style: solid;">
+            <p>{{message.lastname}} {{message.firstname}}</p>
+            <p>{{message.email}}</p>
+            <p>{{message.message}}</p>
+            <div class="text-center">
+                <a role="btn" href="mailto:{{message.email}}" class="btn btn-primary active btn-sm" type="button" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Répondre</a>
+                <a role="btn" href="/Contact/delete/{{ message.id }}" class="btn btn-danger active btn-sm" style="margin: 15px;margin-top: 0;margin-bottom: 0;">Supprimer</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+{% endblock %}

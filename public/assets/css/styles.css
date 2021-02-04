@@ -12,13 +12,18 @@
 }
 
 .strasGite{
-    height: 208px;
-    width: 276px;
+    height: 214px;
+    width: 273px;
+}
+
+.row .presents {
+    justify-content: space-evenly;
 }
 
 .showcase-text {
     text-align: center;
 }
+
 
 @media screen and (max-width: 1024px){
     .w-100 {
@@ -47,7 +52,6 @@
     padding: 50px 0px 50px;
 }
 
-
 .navbar-collapse {
     display: flex;
     justify-content: space-between;
@@ -59,6 +63,10 @@
     font-size: 25px;
     padding: 15px 10%;
 }
+
+.navbar-brand img {
+    height: 50px;
+  }
 
 #footer {
     text-align: center;
@@ -72,3 +80,4 @@
     justify-content: space-between;
     font-size: 14px;
 }
+

@@ -1,0 +1,18 @@
+{% block content %}
+
+    <p style="margin: 110px;"></p>
+        <form method="post">
+            <textarea id="summernote" name="description">{{ room.description }}</textarea>
+            <input type="hidden" name="id" value="{{ room.id }}">
+            <input type="text" name="room" value="{{ room.room }}">
+
+            <input type="submit" value="Valider">
+        </form>
+
+    <script>
+        $('#summernote').summernote({
+            tabsize: 2,
+            height: 100
+        });
+    </script>
+{% endblock %}

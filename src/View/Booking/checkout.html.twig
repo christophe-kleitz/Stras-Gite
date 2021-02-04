@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Confirmation de réservation | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <meta http-equiv="refresh" content="10;URL=/"> 
+{% endblock %}
+
+{% block content %}
+<div class="login-clean">
+    <form>
+        <div class="intro">
+        <h1 class="text-center">Confirmation</h1>
+        </div>
+        <p class="text-center">
+        Merci {{ bookingInfo.firstname }} {{ bookingInfo.lastname }}.
+        </p>
+        <p class="text-center">
+        Votre réservation a bien été prise en compte pour la chambre {{ bookingInfo.roomSelect }}.
+        </p>
+        <p class="text-center">
+        Une confirmation vous a été envoyée à l'adresse mail suivante : {{ bookingInfo.email }} .
+        </p>
+    </form>
+</div>
+{% endblock %}

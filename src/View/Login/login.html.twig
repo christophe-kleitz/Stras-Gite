@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Connexion à mon compte Stras'Gîte | {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+{% endblock %}
+
+{% block content %}
+<div class="login-clean">
+    <form method="post">
+        <h1 class="text-center">Connexion à mon compte</h1>
+        <small style="visibility:hidden" class="form-text text-muted">Help text for a form field.</small>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Mot de passe">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-light active btn-block" type="submit" name="submit">Se connecter</button>
+        </div>
+        <a class="forgot" style="visibility:hidden" href="#">Mot de passe oublié ?</a>
+    </form>
+</div>
+{% endblock %}
